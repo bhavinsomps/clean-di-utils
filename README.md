@@ -3,7 +3,6 @@
 A clean, modular, and scalable **Android project** built with **Kotlin** and **Dependency Injection**.  
 This template is designed as a starting point for Android apps, with **DI modules**, **utility classes**, and a maintainable structure inspired by **Clean Architecture** principles.
 
----
 
 ## ✨ Features
 
@@ -18,7 +17,6 @@ This template is designed as a starting point for Android apps, with **DI module
 - **Ready for Testing**
     - Decoupled dependencies for easier unit and instrumentation tests
 
----
 
 ## 💡 Why Dependency Injection?
 
@@ -29,7 +27,6 @@ Dependency Injection (DI) is at the heart of this project. It enables:
 - **Maintainability** – Keeps classes independent and modular
 - **Reusability** – Shared dependencies managed in a central place
 
----
 
 ## 🛠️ Tech Stack
 
@@ -39,7 +36,6 @@ Dependency Injection (DI) is at the heart of this project. It enables:
 - **Data Persistence** – Jetpack DataStore & SharedPreferences
 - **Utility Layer** – Ready-to-use helpers for networking, navigation, storage, etc.
 
----
 
 ## 📦 Utilities Included
 
@@ -52,7 +48,6 @@ Dependency Injection (DI) is at the heart of this project. It enables:
 - `DataStoreHelper` – DataStore helper
 - `PreferenceHelper` – SharedPreferences wrapper
 
----
 
 ## 🚀 Why This Project?
 
