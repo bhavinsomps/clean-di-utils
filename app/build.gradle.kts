@@ -65,6 +65,10 @@ dependencies {
 
     implementation(libs.androidx.datastore)
 
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.fragment.ktx)
+
     //rating
     implementation(libs.review)
     implementation(libs.review.ktx)
