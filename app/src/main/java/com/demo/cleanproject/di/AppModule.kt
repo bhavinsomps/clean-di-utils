@@ -2,6 +2,9 @@ package com.demo.cleanproject.di
 
 import android.content.Context
 import android.content.SharedPreferences
+import androidx.room.Room
+import com.demo.cleanproject.room.AppDatabase
+import com.demo.cleanproject.room.PostDao
 import com.demo.cleanproject.utils.ApiService
 import com.demo.cleanproject.utils.Constants
 import com.demo.cleanproject.utils.DataStoreHelper
@@ -104,5 +107,13 @@ object AppModule {
     fun provideApiService(retrofit: Retrofit): ApiService {
         return retrofit.create(ApiService::class.java)
     }
+
+    @Provides
+    @Singleton
+    fun provideDatabase(@ApplicationContext context: Context): AppDatabase =
+        Room.databaseBuilder(context, AppDatabase::class.java, "post_db").build()
+
+    @Provides
+    fun providePostDao(db: AppDatabase): PostDao = db.postDao()
 
 }

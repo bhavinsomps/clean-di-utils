@@ -11,6 +11,8 @@ import javax.inject.Singleton
 class PreferenceHelper @Inject constructor(private val pref: SharedPreferences) {
     private object Keys {
         const val SHOW_INTRO = "introShown"
+        const val POST_FETCHED = "post_fetched"
+
         const val PROFILE_IMAGE = "selected_profile_image"
         const val USER_NAME = "user_name"
         const val CUSTOM_CATEGORY = "custom_category"
@@ -33,6 +35,10 @@ class PreferenceHelper @Inject constructor(private val pref: SharedPreferences) 
     var isIntroShown: Boolean
         get() = pref.getBoolean(Keys.SHOW_INTRO, false)
         set(value) = pref.edit { it.putBoolean(Keys.SHOW_INTRO, value) }
+
+    var isPostFetched: Boolean
+        get() = pref.getBoolean(Keys.POST_FETCHED, false)
+        set(value) = pref.edit { it.putBoolean(Keys.POST_FETCHED, value) }
 
     var customCategory: Category
         get() {

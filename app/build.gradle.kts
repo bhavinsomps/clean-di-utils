@@ -3,11 +3,16 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.hilt.android)
     alias(libs.plugins.kotlin.parcelize)
-    kotlin("kapt")
+    id("com.google.devtools.ksp")
+    alias(libs.plugins.room)
 }
 
 kotlin {
     jvmToolchain(17)
+}
+
+room {
+    schemaDirectory("$projectDir/schemas")
 }
 
 android {
@@ -35,6 +40,11 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
     buildFeatures {
         viewBinding = true
     }
@@ -55,7 +65,7 @@ dependencies {
     implementation(libs.ssp.android)
 
     implementation(libs.hilt.android)
-    kapt(libs.hilt.android.compiler)
+    ksp(libs.hilt.android.compiler)
 
     implementation(libs.gson)
     implementation(libs.converter.gson)
@@ -72,4 +82,11 @@ dependencies {
     //rating
     implementation(libs.review)
     implementation(libs.review.ktx)
+
+    implementation(libs.kotlinx.coroutines.android)
+
+    implementation(libs.androidx.room.ktx)
+    implementation(libs.androidx.room.runtime.android)
+    ksp(libs.androidx.room.compiler)
+
 }
